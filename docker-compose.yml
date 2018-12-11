@@ -89,7 +89,7 @@ services:
     image: docker.elastic.co/beats/auditbeat:${TAG}
     container_name: auditbeat
     command: -e --strict.perms=false # -e flag to log to stderr and disable syslog/file output
-    cap_add: ['AUDIT_CONTROL', 'AUDIT_READ']
+    #cap_add: ['AUDIT_CONTROL', 'AUDIT_READ']
     secrets:
       - source: auditbeat.yml
         target: /usr/share/auditbeat/auditbeat.yml
